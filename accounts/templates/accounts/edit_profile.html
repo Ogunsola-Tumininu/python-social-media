@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Edit Profile</title>
+{% endblock %}
+
+{% block active %} active {% endblock %}
+
+{% block 'content' %}
+<div class="col-sm-10 col-md-10">
+    <h2>Eedit Profile</h2>
+    <form action="{% url 'edit_profile' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

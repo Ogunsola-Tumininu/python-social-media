@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: seyifasa@yahoo.com
+Date: Thu, 16 Aug 2018 14:53:14 -0000
+Message-ID: <153443119439.30540.15862897758975949744@METRIC-DEV-001>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8000.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8000/accounts/reset/NQ/4ys-542795726819f7efae3d/
+
+Your username, in case you've forgotten: seyi
+
+Thanks for using our site!
+
+The localhost:8000 team
+
+
+
+-------------------------------------------------------------------------------

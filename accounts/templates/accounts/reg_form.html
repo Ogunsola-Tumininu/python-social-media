@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Registration</title>
+{% endblock %}
+
+{% block active %} active {% endblock %}
+
+{% block 'content' %}
+<div class="col-sm-10 col-md-8">
+    <form action="" method="POST">
+        {% csrf_token %}
+         {{ form.as_p }} 
+         <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

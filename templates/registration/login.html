@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block active %} active {% endblock %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+
+{% block 'content' %}
+<div class="container">
+    <h1>Welcome</h1>
+    <p>You can login here!</p>
+    <h2>Login</h2>
+    <form  method="post">
+        {% csrf_token %}
+        <!-- {% include 'form-template.html' %} -->
+        {{ form.as_p}}
+        <input type="submit" class="btn btn-info" value="Login">
+    
+    </form>    
+</div>
+    
+{% endblock %}

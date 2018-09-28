@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}
+    <title>Login</title>
+    {% endblock %}
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}" type="text/css"> 
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-default" >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Social Network</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="{% block 'clas' %} active {% endblock %}"><a href="{% url 'home:home' %}">Home</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                    <li><a href="{% url 'change_password' %}">Change Password</a></li>
+                    {% else %}
+                    <li><a href="{% url 'password_reset' %}">Reset Password</a></li>
+                    {% endif%}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
+                    {% else %}
+                    <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Register </a></li>
+                    <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% endif%}
+                </ul>
+            </div>
+        </nav>
+    </div>    
+        <br><br>
+    <div class="container">
+        <div class="row">
+        {% block 'content' %}
+        {% endblock %}
+        </div>  
+    </div>
+
+</body>
+</html> 

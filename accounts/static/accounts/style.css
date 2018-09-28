@@ -1,0 +1,11 @@
+body {
+    background-color:#ddd;
+ 
+}
+input[type=text], input[type=password], input[type=email], textarea{
+    padding: 8px;
+    width: 80%;
+    display: block;
+    margin-left:0;
+    margin-bottom: 20px
+  }
